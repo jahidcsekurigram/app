@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="Jahid CSE" content="Jahid CSE">
+  <title>bdris-toolkit</title>
+  <link rel="icon" type="image/x-icon" href="https://www.iconpacks.net/icons/2/free-click-icon-2384-thumb.png">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" >
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
+  <style>
+    body,pre,fieldset,.btn {font-family: 'SolaimanLipi', Arial, sans-serif !important;}
+    .form-control, .btn, .dropdown-menu{border-radius: 0px;}
+    body {
+      background-color: #000;
+      color: #000;
+    }
+    fieldset {
+      display: block;
+      padding-inline-start: 0.75em;
+      padding-inline-end: 0.75em;
+      padding-block-end: 0.625em;
+      border-width: 1px;
+      border-style: groove;
+      border-color: rgb(224, 224, 224);
+    }
+    legend {
+      text-align: center;
+      font-size: 20px;
+      margin: 0px;
+      color: yellow;
+    }
+    .box{
+      padding: 10px;
+      box-shadow: 0 0 7pt 1.5pt #FF26B4;
+    }
+    .box1{box-shadow: rgba(44, 255, 0, 0.78) 0px 19px 38px, rgba(52, 168, 0, 0.51) 0px 15px 12px;}
+    .box2{box-shadow: rgb(255, 251, 0) 0px 19px 38px, rgb(213, 255, 12) 0px 15px 12px;}
+    .box3{box-shadow: rgb(255, 0, 12) 0px 19px 38px, rgba(253, 0, 0, 0.89) 0px 15px 12px;}
+    .color1{
+      background-image: linear-gradient(0deg, #FF008F 0%, #A90FFF 52%, #6D2BFF 90%);
+      color: #fff;
+    }
+    .modal{
+      --mdb-modal-border-radius: 0;
+    }
+    .modal-header, .modal-footer{
+      padding-top:2px;
+      padding-bottom: 2px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    .navbar{
+      --mdb-navbar-padding-top: 0px;
+      --mdb-navbar-brand-img-margin-right: 0px;
+      --mdb-navbar-padding-x: 0;
+      --mdb-navbar-padding-y: 0;
+      --mdb-navbar-color: ;
+      --mdb-navbar-active-color: ;
+    }  
+    .navbar-nav{--mdb-nav-link-hover-color: ;}
+    .nav-link{text-shadow: 1px 2px 3px #000;}
+    .container {
+      width: 100%;
+      margin-right: auto;
+      margin-left: auto;
+    }
+    footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background: #00ff93;
+        text-shadow: 1px 2px 3px #000;
+        color: white;
+        text-align: center;
+        padding-top: 4px;
+        box-shadow: rgb(255, 255, 255) 0px 26px 16px 28px;
+      }
+      @media (max-width: 768px) {
+        footer {
+          position: static;
+          margin-top: 5px;
+          padding-bottom: 10px;
+
+        }
+      }
+      @media (max-width: 768px) {
+        .col-4 {
+          width: 50%;
+          float: left;
+        }
+      }
+      @media (max-width: 576px) {
+        .col-4 {
+          width: 100%;
+          float: none;
+        }
+        fieldset{margin-top:15px;margin-bottom:15px;}
+      }
+      @media (min-width: 992px) {
+        .navbar-nav
+      {
+          padding-right: 0;
+          padding-left: 0;
+        }
+      }
+      .list-group-item:first-child{
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+      .list-group-item:last-child{
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+      .dropdown-menu > li:first-child{
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+      .dropdown-menu > li:last-child{
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+      .navdrop-link{background: #00ff93;}
+      .navdrop-link:hover{background: red;}
+      a{color: #fff;text-shadow: 1px 2px 3px #000;}
+      .offcanvas-header{
+        padding: 6px;
+        background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
+        color: #fff;text-shadow: 1px 2px 3px #000;
+      }
+      .offcanvas-body{
+        background: #00ff93;
+      }
+      .list-group{
+        --mdb-list-group-color: #fff;
+        text-shadow: 1px 2px 3px #000;
+      }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg color1">
+    <div class="container-fluid">
+      <button data-mdb-collapse-init class="navbar-toggler" type="button" data-mdb-target="#navbarCenteredExample" aria-controls="navbarCenteredExample" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-center" id="navbarCenteredExample">
+        <!-- Left links -->
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item"><a href="https://bdris.gov.bd/login" data-mdb-ripple-init class="nav-link"><i class="fa-solid fa-right-to-bracket"></i> বিডিআরআইএস (লগইন)</a></li>
+          <li class="nav-item"><a href="https://everify.bdris.gov.bd" data-mdb-ripple-init class="nav-link"><i class="fa-solid fa-magnifying-glass"></i> জন্ম/মৃত্যু তথ্য যাচাই</a></li>
+          <li class="nav-item"><a href="https://bdris.gov.bd/br/application" data-mdb-ripple-init class="nav-link"><i class="fa-solid fa-envelope-open-text"></i> জন্ম নিবন্ধন নতুন</a></li>
+          <li class="nav-item"><a href="https://bdris.gov.bd/br/correction" data-mdb-ripple-init class="nav-link"><i class="fa-solid fa-calendar-check"></i> জন্ম নিবন্ধন সংশোধন</a></li>
+          <li class="nav-item"><a href="https://bdris.gov.bd/dr/application" data-mdb-ripple-init class="nav-link"><i class="fa-solid fa-bed"></i> মৃত্যু নিবন্ধন নতুন</a></li>
+          <li class="nav-item"><a href="https://bdris.gov.bd/application/print" data-mdb-ripple-init class="nav-link"><i class="fa-solid fa-print"></i> আবেদনপত্র প্রিন্ট</a></li>
+          <li class="nav-item"><a href="https://bdris.gov.bd/br/application/status" data-mdb-ripple-init class="nav-link"><i class="fa-solid fa-truck-fast"></i> আবেদনপত্র ট্র্যাকিং</a></li>
+          <li class="nav-item"><a href="https://eservices.bdris.gov.bd/bdris-ui/#/" data-mdb-ripple-init class="nav-link"><i class="fa-solid fa-mobile-screen-button"></i> মোবাইল নম্বর পরিবর্তন</a></li>
+          <li class="nav-item"><a href="http://orgbdr.gov.bd" data-mdb-ripple-init class="nav-link"><i class="fa-solid fa-building"></i> ওআরজি ওয়েবসাইট</a></li>
+          <li class="nav-item dropdown">
+            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" data-mdb-ripple-init href="#" id="navbarDropdown" role="button" aria-expanded="false"><i class="fa-solid fa-square-poll-vertical"></i> পরীক্ষার ফলাফল</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li class="dropdown-item navdrop-link" data-mdb-ripple-init><a href="https://eboardresults.com/v2/home">Web Based Result Publication System</a></li>
+              <li class="dropdown-item navdrop-link" data-mdb-ripple-init><a href="http://www.educationboardresults.gov.bd">Education Board Bangladesh</a></li>
+              <li class="dropdown-item navdrop-link" data-mdb-ripple-init><a href="http://180.211.162.102:8444/result_arch/index.php">BTEB Diploma Results</a></li>
+              <li class="dropdown-item navdrop-link" data-mdb-ripple-init><a href="http://180.211.137.51/ResultSingleIDWise.aspx">DPE PSC Results</a></li>
+              <li class="dropdown-item navdrop-link" data-mdb-ripple-init><a href="http://results.nu.ac.bd">NU Results</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="#" data-mdb-ripple-init class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa-solid fa-laptop-code"></i> ডেভেলপার</a></li>
+
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12 mt-2 mb-3">
+      <div class="box">
+        <div class="input-group">
+          <span style="padding-right:5px;"><a href="#" style="font-size: 36.5px;" class="btn btn-success" data-mdb-ripple-init onclick="pasteText()"><i class="fa-regular fa-paste"></i></a></span>
+          <div class="form-floating">
+            <input type="number" class="form-control" id="sid" name="sid" placeholder="" pattern="/^-?\d+\.?\d*$/">
+            <label for="floatingInputGroup1">সনদ আইডি / আবেদন আইডি:</label>
+          </div>
+          <span style="padding-left:5px;"><a href="#" style="font-size: 36.5px;" class="btn btn-danger" data-mdb-ripple-init onclick="location.reload();"><i class="fa-solid fa-eraser"></i></a></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <fieldset class="box1">
+        <legend>জন্ম/মৃত্যু নিবন্ধন আবেদন - প্রিন্ট <i class="fa-solid fa-print"></i> </legend>
+        <a href="#" id="brc-new-app" target="_blank" style="font-size: 1.5rem;" class="btn btn-success btn-block" data-mdb-ripple-init><i class="fa-solid fa-file-lines"></i> জন্ম নিবন্ধন নতুন</a>
+        <a href="#" id="brc-corr-app" target="_blank"  style="font-size: 1.5rem;" class="btn btn-danger btn-block" data-mdb-ripple-init><i class="fa-solid fa-file-lines"></i> জন্ম নিবন্ধন সংশোধন </a>
+        <a href="#" style="font-size: 1.5rem;" class="btn btn-warning btn-block" data-mdb-ripple-init><i class="fa-solid fa-file-lines"></i> জন্ম নিবন্ধন পুনঃমুদ্রণ </a>
+        <a href="#" id="death-new-app" target="_blank" style="font-size: 1.5rem;" class="btn btn-info btn-block" data-mdb-ripple-init><i class="fa-solid fa-file-lines"></i> মৃত্যু নিবন্ধন নতুন </a>
+      </fieldset>
+    </div>
+    <div class="col-4">
+      <fieldset class="box2">
+        <legend>জন্ম নিবন্ধন সনদ - প্রিন্ট <i class="fa-solid fa-print"></i></legend>
+        <a href="#" id="br-certificate" target="_blank" style="font-size: 1.5rem;" class="btn bg-success bg-gradient text-white btn-block" data-mdb-ripple-init><i class="fa fa-file-invoice"></i> <i class="bi bi-qr-code"></i> জন্ম নিবন্ধন</a>
+        <a href="#" id="br-new-certificate" target="_blank" style="font-size: 1.5rem;" class="btn bg-danger bg-gradient text-white btn-block" data-mdb-ripple-init><i class="fa fa-file-invoice"></i> <i class="bi bi-qr-code"></i> জন্ম নিবন্ধন নতুন</a>
+        <a href="#" id="br-corrected-certificate" target="_blank" style="font-size: 1.5rem;" class="btn bg-warning bg-gradient text-white btn-block" data-mdb-ripple-init><i class="fa fa-file-invoice"></i> <i class="bi bi-qr-code"></i> জন্ম নিবন্ধন সংশোধন</a>
+        <a href="#" id="br-duplicate-certificate" target="_blank" style="font-size: 1.5rem;" class="btn bg-info bg-gradient text-white btn-block" data-mdb-ripple-init><i class="fa fa-file-invoice"></i> <i class="bi bi-qr-code"></i> জন্ম নিবন্ধন পুনঃমুদ্রণ</a>
+      </fieldset>
+    </div>
+    <div class="col-4">
+      <fieldset class="box3">
+        <legend>মৃত্যু নিবন্ধন সনদ - প্রিন্ট <i class="fa-solid fa-print"></i></legend>
+        <a href="#" id="dr-certificate" target="_blank" style="font-size: 1.5rem;background-color:blue;" class="btn text-white btn-block" data-mdb-ripple-init><i class="fa fa-file-invoice"></i> <i class="bi bi-qr-code"></i> মৃত্যু নিবন্ধন</a>
+        <a href="#" id="dr-new-certificate" target="_blank" style="font-size: 1.5rem;background-color:red;" class="btn text-white btn-block" data-mdb-ripple-init><i class="fa fa-file-invoice"></i> <i class="bi bi-qr-code"></i> মৃত্যু নিবন্ধন নতুন</a>
+        <a href="#" id="dr-corrected-certificate" target="_blank" style="font-size: 1.5rem;background-color:#8000ff;" class="btn text-white btn-block" data-mdb-ripple-init><i class="fa fa-file-invoice"></i> <i class="bi bi-qr-code"></i> মৃত্যু নিবন্ধন সংশোধন</a>
+        <a href="#" id="dr-duplicate-certificate" target="_blank" style="font-size: 1.5rem;background-color:#00f4af;" class="btn text-white btn-block" data-mdb-ripple-init><i class="fa fa-file-invoice"></i> <i class="bi bi-qr-code"></i> মৃত্যু নিবন্ধন পুনঃমুদ্রণ</a>
+      </fieldset>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasLabel"><i class="fa-solid fa-laptop-code"></i> Software Developer</h5>
+    <button type="button" class="btn-close btn-sm" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+
+    <div class="list-group" style="text-align:center;">
+      <button type="button" style="font-size:18px;background-color:#ff0462;" class="btn text-white list-group-item list-group-item-action" data-mdb-collapse-init data-mdb-ripple-init data-mdb-target="#hrapprove"><i class="fa-solid fa-code"></i> PENDING_APPROVAL_FOR_DOB</button>
+      <div class="collapse mt-1" id="hrapprove">
+        <button type="button" style="font-size:18px;background-color:#0087ff;" class="btn text-white list-group-item list-group-item-action" data-mdb-ripple-init data-bs-toggle="modal" data-bs-target="#hrcode"><i class="fa-solid fa-user-lock"></i>  →</button>
+      </div>
+    </div>
+    <div style="text-align: center;">
+      <img src="https://3.bp.blogspot.com/-bFCa7sOFoQY/YD9EPhd_K6I/AAAAAAAAGus/xV4YM79eyrY_p2g6vACebXYOm7NCtJ8rQCK4BGAYYCw/s1600/Jahid%2BCSE-Formal2.png" style="width: 145px;height: 157px;margin-top: 13px;border: 3px solid #fff;border-radius: 50%;" />
+    </div>
+
+    <ul class="list-group list-group-light">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center">
+          <div class="ms-3">
+            <p class="fw-bold mb-1"><i class="fa-solid fa-id-card-clip"></i> Md. Jahid Hasan</p>
+            <p><i class="fa-solid fa-envelope-open-text"></i> jahidcse96@proton.me</p>
+            <p><i class="fa-solid fa-square-phone"></i> +8801792-940269</p>
+
+          </div>
+        </div>
+      </li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="hrcode" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: red;color:#fff;border-radius: 0px;">
+        <h5 class="modal-title" id="exampleModalLabel"><i class="fa-solid fa-code"></i> PENDING_APPROVAL_FOR_DOB</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="text-align:center;">
+        <style>
+          @media print {
+            body * {
+              visibility: hidden;
+            }
+            #hrcode, #hrcode * {
+              visibility: visible;
+            }
+            #hrcode {
+              position: absolute;
+              left: 0;
+              top: 0;
+            }
+          }
+        </style>
+        <pre style="font-size:10px;color:red;" id="code">
+          &lt;a href="javascript:" style="" class="btn btn-success app_correct" data-id="30533884"&gt;সংশোধন&lt;/a&gt;
+        </pre>
+        <button type="button" class="btn btn-sm btn-warning" onclick="copyText()" data-mdb-ripple-init><i class="fa-solid fa-copy"></i> COPY</button>
+        <button type="button" class="btn btn-sm btn-info" onclick="zoomIn()" data-mdb-ripple-init><i class="bi bi-zoom-in"></i> ZOOM IN</button>
+        <button type="button" class="btn btn-sm btn-primary" onclick="zoomOut()" data-mdb-ripple-init><i class="bi bi-zoom-out"></i> ZOOM OUT</button>
+
+        <a href="" class="btn btn-sm btn-success" onclick="window.print();" data-mdb-ripple-init><i class="fa-solid fa-print"></i> PRINT</a>
+        <button type="button" class="btn btn-sm btn-danger" data-bs-dismiss="modal" data-mdb-ripple-init><i class="fa-solid fa-xmark"></i> CLOSE</button>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<footer>
+  <h6>কপিরাইট ©  ২০২৪. সর্বস্বত্ব স্বত্বাধিকার সংরক্ষিত- বিডিআরআইএস টুলকিট 
+    <small style="float:right;padding-right: 10px;"><a href="http://jahidcserstu.great-site.net/" style="color:#fff;"> Develop By Jahid CSE</a></small>
+  </h6>
+</footer>
+
+<script>
+  function pasteText() {
+      navigator.clipboard.readText().then(function (clipboardText) {
+          document.getElementById("sid").value = clipboardText;
+      }).catch(function (err) {
+          console.error('', err);
+      });
+  }
+</script>
+
+<script>
+  function copyText() {
+      var textToCopy = document.getElementById("code").innerText;
+      navigator.clipboard.writeText(textToCopy).then(function() {
+      }).catch(function() {
+      });
+  }
+</script>
+<script>
+  var fontSize = 16;
+
+  function zoomIn() {
+      fontSize += 2;
+      updateFontSize();
+  }
+
+  function zoomOut() {
+      fontSize -= 2;
+      updateFontSize();
+  }
+
+  function updateFontSize() {
+      var codeElement = document.getElementById("code");
+      codeElement.style.fontSize = fontSize + "px";
+  }
+</script>
+
+  <script>
+    const sidInput = document.getElementById("sid");
+    const brCertificate = document.getElementById("br-certificate");
+    const brNewCertificate = document.getElementById("br-new-certificate");
+    const brDupCertificate = document.getElementById("br-duplicate-certificate");
+    const brCorrCertificate = document.getElementById("br-corrected-certificate");
+    const drCertificate = document.getElementById("dr-certificate");
+    const drNewCertificate = document.getElementById("dr-new-certificate");
+    const drDupCertificate = document.getElementById("dr-duplicate-certificate");
+    const drCorrCertificate = document.getElementById("dr-corrected-certificate");
+    const brcNewApp = document.getElementById("brc-new-app");
+    const brcCorrApp = document.getElementById("brc-corr-app");
+    const deathNewApp = document.getElementById("death-new-app");
+
+    sidInput.addEventListener("input", function() {
+        const sid = sidInput.value;
+        if (sid.trim() !== '') {
+          brCertificate.href = `https://bdris.gov.bd/admin/new-certificate/print/5/birth/${sid}?certificateLanguage=BOTH`;
+          brNewCertificate.href = `https://bdris.gov.bd/admin/new-certificate/print/5/birth/1?appId=${sid}&certificateCollectorName=&certificateCollectorPhone=&certificateLanguage=BOTH`;
+          brDupCertificate.href = `https://bdris.gov.bd/admin/new-certificate/print/5/birth/${sid}?certificateType=duplicate&certificateLanguage=BOTH`;
+          brCorrCertificate.href = `https://bdris.gov.bd/admin/new-certificate/print/5/birth/${sid}?certificateType=corrected&certificateLanguage=BOTH`;
+
+          drCertificate.href = `https://bdris.gov.bd/admin/new-certificate/print/5/death/${sid}?certificateLanguage=BOTH`;
+          drNewCertificate.href = `https://bdris.gov.bd/admin/new-certificate/print/5/death/1?appId=${sid}&certificateCollectorName=&certificateCollectorPhone=&certificateLanguage=BOTH`;
+          drDupCertificate.href = `https://bdris.gov.bd/admin/new-certificate/print/5/death/${sid}?certificateType=duplicate&certificateLanguage=BOTH`;
+          drCorrCertificate.href = `https://bdris.gov.bd/admin/new-certificate/print/5/death/${sid}?certificateType=corrected&certificateLanguage=BOTH`;
+
+          brcNewApp.href = `https://bdris.gov.bd/admin/br/application/print/${sid}`;
+          brcCorrApp.href = `https://bdris.gov.bd/admin/br/correction/application/print/${sid}`;
+          deathNewApp.href = `https://bdris.gov.bd/admin/dr/application/print/${sid}`;
+        } else {
+          brCertificate.removeAttribute('href');
+          brNewCertificate.removeAttribute('href');
+          brDupCertificate.removeAttribute('href');
+          brCorrCertificate.removeAttribute('href');
+          drCertificate.removeAttribute('href');
+          drNewCertificate.removeAttribute('href');
+          drDupCertificate.removeAttribute('href');
+          drCorrCertificate.removeAttribute('href');
+          brcNewApp.removeAttribute('href');
+          brcCorrApp.removeAttribute('href');
+          deathNewApp.removeAttribute('href');
+        }
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js" type="text/javascript"></script>
+</body>
+</html>
