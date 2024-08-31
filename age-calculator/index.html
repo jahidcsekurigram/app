@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>বয়স ক্যালকুলেটর</title>
+    <link href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"> 
+    <style>
+        body {display: flex;flex-direction: column;background: #fff;}
+        .container {padding: 20px;flex: 1;}
+        .bg-top{background-color: red;background-image: linear-gradient(50deg, #FF0ED9 0%, #00C9FF 52%, #00FF70 90%);}
+        .info-box .closer {top: -1px;right: -1px;background-color: red;color: #fff;}
+        .overlay{background: rgba(0, 0, 0, 0.8) !important;}
+        .info-box{border: 2px solid #dfdfdf;}
+        .info-box.light{border-color: #f00;} 
+        .birthdate{background-image: linear-gradient(190deg, #21D4FD 0%, #B721FF 100%);}
+        .calculation-date{background-image: linear-gradient( 190deg,  rgba(61,245,167,1) 11.2%, rgba(9,111,224,1) 91.1% );}
+        .wheel-picker .select-block{background-color: #00ffc3;}
+        .wheel-picker .select-block::before{background-color:red;}
+        .info-box .closer{display:0;}
+        .alert{border-radius:0px;}
+        .footer {position: fixed;left: 0;bottom: 0;width: 100%;background-image: linear-gradient(-225deg, #A445B2 0%, #D41872 52%, #FF0066 100%);color: white;text-align: center;box-shadow: rgb(0, 0, 0) 0px 1px 7px, rgba(0, 0, 0, 0.24) 0px 1px 2px;}
+    </style>
+</head>
+<body>
+
+ <h1 class="fw-bold text-center bg-top text-white p-2" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; ">বয়স ক্যালকুলেটর</h1> 
+       <ul class="nav nav-tabs"> 
+  <li class="nav-item"> 
+    <a class="nav-link active" href="#">ডিজাইন-১</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="index2.html">ডিজাইন-২</a>
+  </li>
+ 
+</ul>
+        <div class="container mt-1 cell-md-8 cell-sm-12 text-center">
+            
+            <div class="padding20">
+                <div class="form-group birthdate text-white">
+                    <label class="h3 pt-2">জন্ম তারিখ:</label>
+                    <input id="birthdate" data-role="datepicker">
+                </div>
+                    <br>
+                <div class="form-group calculation-date text-white">
+                    <label class="h3 pt-2">বয়স নির্ণয়ের তারিখ:</label>
+                    <input id="calculation-date" data-role="datepicker">
+                </div>
+
+                <button class="h3 button primary w-100 shadowed mt-3 p-4" onclick="calculateAge()">বয়স নির্ণয় করুন</button>
+                <a href="" onreset="resetHandler();" class="h4 button alert w-100 shadowed mt-1 p-3">রিসেট</a>
+            </div>
+        </div>  
+
+        <div class="d-lg-none d-sm-none text-center"><img src="footer-img.svg" class="img-fluid"></div>
+        <div class="footer p-1"> 
+           <a href="https://jahidcsekurigram.github.io/portfolio/" class="h3 text-decoration-none text-reset">সফটওয়্যার ডেভেলপমেন্ট - জাহিদ সিএসই</a>
+        </div>
+
+
+    <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+    <script>
+        Metro['locales']['bn-BD'] = {
+            "calendar": {
+                "months": ["জানুয়ারী", "ফেব্রুয়ারী", "মার্চ", "এপ্রিল", "মে", "জুন", "জুলাই", "আগস্ট", "সেপ্টেম্বর", "অক্টোবর", "নভেম্বর", "ডিসেম্বর"],
+                "monthsShort": ["জানু", "ফেব", "মার্চ", "এপ্রি", "মে", "জুন", "জুল", "আগ", "সেপ্ট", "অক্টো", "নভে", "ডিসে"],
+                "days": ["রবিবার", "সোমবার", "মঙ্গলবার", "বুধবার", "বৃহস্পতিবার", "শুক্রবার", "শনিবার"],
+                "daysShort": ["রবি", "সোম", "মঙ্গল", "বুধ", "বৃহস্পতি", "শুক্র", "শনি"],
+                "daysMin": ["র", "স", "ম", "ব", "বৃ", "শু", "শ"],
+                "weekStart": 1
+            }
+        };
+
+        function convertToBengaliNumbers(num) {
+            const bengaliDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+            return num.toString().split('').map(char => {
+                return bengaliDigits[char] || char;
+            }).join('');
+        }
+
+        function formatDate(date) {
+            const days = ['রবিবার', 'সোমবার', 'মঙ্গলবার', 'বুধবার', 'বৃহস্পতিবার', 'শুক্রবার', 'শনিবার'];
+            const months = ['জানুয়ারী', 'ফেব্রুয়ারী', 'মার্চ', 'এপ্রিল', 'মে', 'জুন', 'জুলাই', 'আগস্ট', 'সেপ্টেম্বর', 'অক্টোবর', 'নভেম্বর', 'ডিসেম্বর'];
+
+            const day = convertToBengaliNumbers(date.getDate());
+            const month = months[date.getMonth()];
+            const year = convertToBengaliNumbers(date.getFullYear());
+            const dayName = days[date.getDay()];
+
+            return `${dayName}, ${day} ${month} ${year}`;
+        }
+
+        function calculateAge() {
+            var birthdate = new Date(document.getElementById('birthdate').value);
+            var calcDate = new Date(document.getElementById('calculation-date').value);
+
+            var ageYears = calcDate.getFullYear() - birthdate.getFullYear();
+            var ageMonths = calcDate.getMonth() - birthdate.getMonth();
+            var ageDays = calcDate.getDate() - birthdate.getDate();
+
+            if (ageDays < 0) {
+                ageMonths--;
+                ageDays += new Date(calcDate.getFullYear(), calcDate.getMonth(), 0).getDate();
+            }
+
+            if (ageMonths < 0) {
+                ageYears--;
+                ageMonths += 12;
+            }
+
+            var diff = calcDate - birthdate;
+            var totalMonths = ageYears * 12 + ageMonths;
+            var ageWeeks = Math.floor(diff / (1000 * 60 * 60 * 24 * 7));
+            var ageTotalDays = Math.floor(diff / (1000 * 60 * 60 * 24));
+            var ageHours = Math.floor(diff / (1000 * 60 * 60));
+            var ageMinutes = Math.floor(diff / (1000 * 60));
+            var ageSeconds = Math.floor(diff / 1000);
+
+            var content = `
+                <br>
+                <div class="text-center">
+                <h5>${formatDate(calcDate)} তারিখে <br>আপনার বয়স:</h5>
+                <p class="bg-primary text-white h3 p-3">${convertToBengaliNumbers(ageYears)} বছর ${convertToBengaliNumbers(ageMonths)} মাস ${convertToBengaliNumbers(ageDays)} দিন</p>
+                <hr>
+                <span class="text-start">
+                <p>অথবা ${convertToBengaliNumbers(ageYears)} বছর</p>
+                <p>অথবা ${convertToBengaliNumbers(totalMonths)} মাস</p>
+                <p>অথবা ${convertToBengaliNumbers(ageWeeks)} সপ্তাহ</p>
+                <p>অথবা ${convertToBengaliNumbers(ageTotalDays)} দিন</p>
+                <p>অথবা ${convertToBengaliNumbers(ageHours)} ঘণ্টা</p>
+                <p>অথবা ${convertToBengaliNumbers(ageMinutes)} মিনিট</p>
+                <p>অথবা ${convertToBengaliNumbers(ageSeconds)} সেকেন্ড</p></span><hr>
+                <span class="text-center">-------------- ধন্যবাদ --------------</span>
+                </div>
+            `;
+
+            if (!isNaN(ageYears)) {
+                Metro.infobox.create(content, "light");
+            } else {
+                Metro.infobox.create("<h4>অনুগ্রহ করে সঠিক তারিখ প্রদান করুন।</h4>", "alert");
+            }
+        }
+
+        $("#birthdate").datepicker({
+            locale: 'bn-BD',
+        });
+
+        $("#calculation-date").datepicker({
+            locale: 'bn-BD',
+            value: new Date()
+        });
+    </script>
+
+</body>
+</html>
