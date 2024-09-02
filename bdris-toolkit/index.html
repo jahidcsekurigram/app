@@ -10,6 +10,32 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" >
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
+   <script>
+        window.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        }, false);
+        document.onselectstart = function pauseEvent(e) {
+            if (e.stopPropagation) e.stopPropagation();
+            if (e.preventDefault) e.preventDefault();
+            e.cancelBubble = true;
+            e.returnValue = false;
+            return false;
+        }
+    </script>
+    <script>
+        $('img').mousedown(function (e) {
+        if(e.button == 2) { // right click
+            return false; // do nothing!
+        }
+        });
+    </script>
+    <script language="javascript">
+        var noPrint=true;
+        var noCopy=true;
+        var noScreenshot=true;
+        var autoBlur=true;
+    </script>
+    
   <style>
     body,pre,fieldset,.btn {font-family: 'SolaimanLipi', Arial, sans-serif !important;}
     .form-control, .btn, .dropdown-menu{border-radius: 0px;}

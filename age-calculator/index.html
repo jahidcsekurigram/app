@@ -39,6 +39,32 @@
             .offcanvas.offcanvas-top{height: auto;}
         }
     </style>
+       <script>
+        window.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        }, false);
+        document.onselectstart = function pauseEvent(e) {
+            if (e.stopPropagation) e.stopPropagation();
+            if (e.preventDefault) e.preventDefault();
+            e.cancelBubble = true;
+            e.returnValue = false;
+            return false;
+        }
+    </script>
+    <script>
+        $('img').mousedown(function (e) {
+        if(e.button == 2) { // right click
+            return false; // do nothing!
+        }
+        });
+    </script>
+    <script language="javascript">
+        var noPrint=true;
+        var noCopy=true;
+        var noScreenshot=true;
+        var autoBlur=true;
+    </script>
+
 </head>
 <body>
 
