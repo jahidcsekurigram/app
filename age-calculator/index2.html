@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>বয়স ক্যালকুলেটর</title>
+  <link rel="shortcut icon" href="favicon.jpg" type="image/x-icon">
+
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"> 
+  <link href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css" rel="stylesheet" >
+  <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet"> -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <link href="assets/jquery-ui.css" rel="stylesheet">
+  <link href="assets/bangla-font/bangla-font.css" rel="stylesheet">
+
+  <style>
+    body, *{font-family: 'SolaimanLipi', Arial, sans-serif !important;}
+    .birthdate{background-image: linear-gradient(190deg, #21D4FD 0%, #B721FF 100%);}
+    .calculation-date{background-image: linear-gradient(190deg, rgba(61,245,167,1) 11.2%, rgba(9,111,224,1) 91.1% );}
+    .form-control-lg, .form-control, .card,.card-header:first-child, .btn{border-radius:0px;}
+    .navbar{--bs-navbar-toggler-border-radius:0px;}
+    .bg-top{background-color: red;background-image: linear-gradient(50deg, #FF0ED9 0%, #00C9FF 52%, #00FF70 90%);}
+    .footer {position: fixed;left: 0;bottom: 0;width: 100%;background-image: linear-gradient(-225deg, #A445B2 0%, #D41872 52%, #FF0066 100%);color: white;text-align: center;box-shadow: rgb(0, 0, 0) 0px 1px 7px, rgba(0, 0, 0, 0.24) 0px 1px 2px;}
+    .card {box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;}
+    .form-control-lg{text-align: center;letter-spacing: 4px;font-family: 'NikoshBAN', 'SutonnyMJ', Arial !important;}
+    .form-control {background-color: #bfffc93d;color:#fff;}
+    .tod-head{box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;}
+    .modal{--bs-modal-border-radius: 0;}
+    .modal-header{padding: 8px;}
+    @media screen and (max-width: 767px) {
+      .offcanvas-body .nav-link {
+        color: #000 !important; 
+        background-color:#00ffc3; 
+        margin: 5px 0;
+        padding: 17px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        font-size: 18px;
+      }
+      .offcanvas-body .nav-link:hover {
+        background-color: #fff55e;
+        color: #fff;
+      }
+      .offcanvas.offcanvas-top{height: auto;}
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary bg-top tod-head" data-bs-theme="dark">
+    <div class="container-fluid d-flex justify-content-center align-items-center">
+      <a class="navbar-brand fw-bold" href="#" style="font-size:1.75rem; line-height: 1;">বয়স ক্যালকুলেটর</a>
+      <button class="navbar-toggler position-absolute" style="right: 10px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+
+    <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasNavbar">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="font-size:1.75rem; line-height: 1;">বয়স ক্যালকুলেটর</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 d-lg-none d-sm-none" >
+          <li class="nav-item">
+            <a class="nav-link" href="mailto:jahidcsekurigram@gmail.com?subject=বয়স ক্যালকুলেটর- সফটওয়্যার সংক্রান্ত মতামত প্রসঙ্গে।&body=বয়স ক্যালকুলেটর - সম্পর্কে আপনার মতামত লিখুন.....">
+              <img src="assets/feedback.png" width="30" height="30" style="filter:drop-shadow(0px 0px 5px #ffffffe5);"/>&nbsp;&nbsp; ফিডব্যাক
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link active" href="#" >
+              <img src="assets/collaboration.png" width="30" height="30" style="filter:drop-shadow(0px 0px 5px #ffffffe5);" />
+              &nbsp;&nbsp;বন্ধুদের সাথে লিংক শেয়ার করুন
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://jahidcsekurigram.github.io/app/"><img src="assets/apps.png" width="30" height="30" style="filter:drop-shadow(0px 0 px 5px #fff);"/>&nbsp;&nbsp; অন্যান্য অ্যাপস সমূহ</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="https://jahidcsekurigram.github.io/app/age-calculator/age-calculator.apk"><img src="assets/playstore.png" width="30" height="30" style="filter:drop-shadow(0px 0 px 5px #fff);"/>&nbsp;&nbsp; অ্যাপস ডাউনলোড</a>
+          </li>
+
+        </ul>
+        <div class="mt-5 d-lg-none d-sm-none d-flex justify-content-center align-items-center">
+            <div id="qrcode">
+            <script>
+                var qrcode = new QRCode(document.getElementById("qrcode"), {
+                    text: "https://jahidcsekurigram.github.io/app/age-calculator/age-calculator.apk",
+                    width: 180,
+                    height: 180,
+                    colorDark: "#fff",
+                    colorLight: "#000",
+                    correctLevel: QRCode.CorrectLevel.H
+                });
+            </script>
+            </div>
+        </div>
+      </div>
+          <div class="offcanvas-footer">
+          <div class="d-md-none text-center mb-1">
+              <h5 style="background-color: #d50064;color: #fff; padding: 3px;" class="shadow"> <code class="text-white">&lt;/&gt;</code> সফটওয়্যার ডিজাইন এন্ড ভেভেলপমেন্ট</h5>
+              <div>
+                  <img src="assets/jahidcse.jpg" class="rounded-circle" width="90px" height="90px" style="filter:drop-shadow(0px 1px 12px #ffffffb2);"><br>
+                  <h6 class="fw-bold mt-1 mb-0">মোঃ জাহিদ হাসান</h6>
+                  <small>ডিপ্লোমা-ইন-ইঞ্জিনিয়ারিং (কম্পিউটার টেকনোলজি)<br>
+                  বিএসসি ইন-কম্পিউটার সাইন্স এন্ড ইঞ্জিনিয়ারিং (সিএসই)<br>
+                  রাজশাহী সাইন্স এন্ড টেকনোলজি ইউনিভার্সিটি (আরএসটিইউ)</small>
+              </div>
+          </div>
+    </div>
+    </div>
+  </nav>
+
+  <ul class="nav nav-tabs mt-2"> 
+    <li class="nav-item"><a class="nav-link d-none d-lg-block" href="https://jahidcsekurigram.github.io/app/">←</a></li>
+    <li class="nav-item"><a class="nav-link" href="index.html">ডিজাইন-১</a></li>
+    <li class="nav-item"><a class="nav-link active" href="#">ডিজাইন-২</a></li>
+    <li class="nav-item"><a class="nav-link d-none d-lg-block" href="https://jahidcsekurigram.github.io/app/age-calculator/age-calculator.apk">অ্যাপস ডাউনলোড</a></li>
+  </ul>
+
+  <div class="container mt-2">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="row align-items-center g-3 text-center">
+              <div class="col-lg-5 col-md-12">
+                <div class="form-group birthdate text-white">
+                  <label class="h3 pt-2">জন্ম তারিখ:</label>
+                  <input type="text" id="birthDatePicker" class="form-control form-control-lg">
+                </div>
+              </div>
+
+              <div class="col-lg-5 col-md-12">     
+                <div class="form-group calculation-date text-white">
+                  <label class="h3 pt-2">বয়স নির্ণয়ের তারিখ:</label>
+                  <input type="text" id="calcDatePicker" class="form-control form-control-lg">
+                </div>
+              </div>
+
+              <div class="col-lg-2 col-md-12">
+                <div class="d-grid gap-1">
+                  <button class="btn btn-primary" onclick="calculateAge()"><span class="h3">বয়স নির্ণয় করুন</span></button>
+                  <a href="" onreset="resetHandler();" class="btn btn-warning"><span>রিসেট</span></a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="resultContainer"></div>
+
+  <div class="footer p-1"> 
+    <a href="https://jahidcsekurigram.github.io/portfolio/" class="h3 text-decoration-none text-reset">সফটওয়্যার ডেভেলপমেন্ট - জাহিদ সিএসই</a>
+  </div>
+
+  <!-- <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" ></script>
+  <script src="assets/jquery-3.7.1.js"></script>
+  <script src="assets/jquery-ui.js"></script>
+
+  <script>
+    // Convert numbers to Bengali
+    function convertToBengaliNumbers(num) {
+      const bnNumbers = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+      return num.toString().split('').map(char => bnNumbers[char] || char).join('');
+    }
+
+    // Format date to Bengali format
+    function formatDate(date) {
+      const days = ['রবিবার', 'সোমবার', 'মঙ্গলবার', 'বুধবার', 'বৃহস্পতিবার', 'শুক্রবার', 'শনিবার'];
+      const months = ['জানুয়ারী', 'ফেব্রুয়ারী', 'মার্চ', 'এপ্রিল', 'মে', 'জুন', 'জুলাই', 'আগস্ট', 'সেপ্টেম্বর', 'অক্টোবর', 'নভেম্বর', 'ডিসেম্বর'];
+
+      const day = convertToBengaliNumbers(date.getDate());
+      const month = months[date.getMonth()];
+      const year = convertToBengaliNumbers(date.getFullYear());
+      const dayName = days[date.getDay()];
+
+      return `${dayName}, ${day} ${month} ${year}`;
+    }
+
+    $(function() {
+      $.datepicker.regional['bn'] = {
+        closeText: "বন্ধ",
+        prevText: "পেছনে",
+        nextText: "সামনে",
+        currentText: "আজ",
+        monthNames: ["জানুয়ারী","ফেব্রুয়ারী","মার্চ","এপ্রিল","মে","জুন",
+        "জুলাই","আগস্ট","সেপ্টেম্বর","অক্টোবর","নভেম্বর","ডিসেম্বর"],
+        monthNamesShort: ["জানুয়ারী","ফেব্রুয়ারী","মার্চ","এপ্রিল","মে","জুন",
+        "জুলাই","আগস্ট","সেপ্টেম্বর","অক্টোবর","নভেম্বর","ডিসেম্বর"],
+        dayNames: ["রবিবার","সোমবার","মঙ্গলবার","বুধবার","বৃহস্পতিবার","শুক্রবার","শনিবার"],
+        dayNamesShort: ["রবি","সোম","মঙ্গল","বুধ","বৃহ","শুক্র","শনি"],
+        dayNamesMin: ["রবি","সোম","মঙ্গল","বুধ","বৃহ","শুক্র","শনি"],
+        weekHeader: "হপ্তা",
+        dateFormat: "dd-mm-yy",
+        firstDay: 0,
+        isRTL: false,
+        showMonthAfterYear: false,
+        yearSuffix: "",
+        beforeShow: function(input, inst) {
+          setTimeout(function() {
+            inst.dpDiv.find('.ui-datepicker-title select').each(function() {
+              const options = $(this).find('option');
+              options.each(function() {
+                const $this = $(this);
+                $this.text(convertToBengaliNumbers($this.text()));
+              });
+            });
+
+            const dayHeaders = inst.dpDiv.find('.ui-datepicker-calendar th span');
+            dayHeaders.each(function() {
+              const $this = $(this);
+              $this.text(convertToBengaliNumbers($this.text()));
+            });
+          }, 0);
+        },
+        onChangeMonthYear: function(year, month, inst) { 
+          setTimeout(function() {
+            inst.dpDiv.find('.ui-datepicker-title select').each(function() {
+              const options = $(this).find('option');
+              options.each(function() {
+                const $this = $(this);
+                $this.text(convertToBengaliNumbers($this.text()));
+              });
+            });
+
+            const dayHeaders = inst.dpDiv.find('.ui-datepicker-calendar th span');
+            dayHeaders.each(function() {
+              const $this = $(this);
+              $this.text(convertToBengaliNumbers($this.text()));
+            });
+          }, 0);
+        },
+        onSelect: function(dateText, inst) {
+          $(this).val(dateText);
+        }
+      };
+
+      $.datepicker.setDefaults($.datepicker.regional['bn']);
+
+      const today = new Date();
+      const formattedDate = ("0" + today.getDate()).slice(-2) + "-" + ("0" + (today.getMonth() + 1)).slice(-2) + "-" + today.getFullYear();
+
+      $("#birthDatePicker").datepicker({
+        changeMonth: true,
+        changeYear: true,
+        yearRange: "1900:2200",
+        dateFormat: "dd-mm-yy"
+      }).datepicker("setDate", formattedDate);
+
+      $("#calcDatePicker").datepicker({
+        changeMonth: true,
+        changeYear: true,
+        yearRange: "1900:2200",
+        dateFormat: "dd-mm-yy"
+      }).datepicker("setDate", formattedDate);
+    });
+
+    function calculateAge() {
+      var birthdateStr = document.getElementById('birthDatePicker').value;
+      var calcDateStr = document.getElementById('calcDatePicker').value;
+
+      // Check if the dates are valid
+      if (!birthdateStr || !calcDateStr) {
+        alert("দয়া করে দুটি তারিখ সঠিকভাবে নির্বাচন করুন।");
+        return;
+      }
+
+      var birthdate = new Date(birthdateStr.split('-').reverse().join('-'));
+      var calcDate = new Date(calcDateStr.split('-').reverse().join('-'));
+
+      if (isNaN(birthdate.getTime()) || isNaN(calcDate.getTime())) {
+        alert("অনুগ্রহ করে সঠিক তারিখ ফরম্যাট ব্যবহার করুন (dd-mm-yy)।");
+        return;
+      }
+
+      var ageYears = calcDate.getFullYear() - birthdate.getFullYear();
+      var ageMonths = calcDate.getMonth() - birthdate.getMonth();
+      var ageDays = calcDate.getDate() - birthdate.getDate();
+
+      if (ageDays < 0) {
+        ageMonths--;
+        ageDays += new Date(calcDate.getFullYear(), calcDate.getMonth(), 0).getDate();
+      }
+
+      if (ageMonths < 0) {
+        ageYears--;
+        ageMonths += 12;
+      }
+
+      var diff = calcDate - birthdate;
+      var totalMonths = ageYears * 12 + ageMonths;
+      var ageWeeks = Math.floor(diff / (1000 * 60 * 60 * 24 * 7));
+      var ageTotalDays = Math.floor(diff / (1000 * 60 * 60 * 24));
+      var ageHours = Math.floor(diff / (1000 * 60 * 60));
+      var ageMinutes = Math.floor(diff / (1000 * 60));
+      var ageSeconds = Math.floor(diff / 1000);
+
+      var resultHTML = `
+        <div class="container mt-3">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-12">
+              <div class="card">
+                <div class="card-header text-white" style="background: linear-gradient(to right, #5a2cff, #12d8fa, #ec28e9ab);font-size:19px;">বয়স নির্ণয়ের ফলাফল :</div>
+                <div class="card-body">
+                  <div class="text-center" style="line-height: 60%;">
+                    <h5>${formatDate(calcDate)} তারিখে <br>আপনার বয়স:</h5>
+                    <p class="bg-success text-white h3 p-3">${convertToBengaliNumbers(ageYears)} বছর ${convertToBengaliNumbers(ageMonths)} মাস ${convertToBengaliNumbers(ageDays)} দিন</p>
+
+                    <table class="table table-bordered">
+                      <tbody>
+                        <tr class="fw-bold">
+                          <td class="bg-primary text-white">মাস</td>
+                          <td class="bg-primary text-white">সপ্তাহ</td>
+                          <td class="bg-primary text-white">দিন</td>
+                        </tr>
+                        <tr>
+                          <td>${convertToBengaliNumbers(totalMonths)}</td>
+                          <td>${convertToBengaliNumbers(ageWeeks)}</td>
+                          <td>${convertToBengaliNumbers(ageTotalDays)}</td>
+                        </tr>
+                        <tr class="fw-bold">
+                          <td class="bg-info text-white">ঘণ্টা</td>
+                          <td class="bg-info text-white">মিনিট</td>
+                          <td class="bg-info text-white">সেকেন্ড</td>
+                        </tr>
+                        <tr>
+                          <td>${convertToBengaliNumbers(ageHours)}</td>
+                          <td>${convertToBengaliNumbers(ageMinutes)}</td>
+                          <td>${convertToBengaliNumbers(ageSeconds)}</td>
+                        </tr>
+                        <tr>
+                          <td colspan="3">-------------- ধন্যবাদ --------------</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+      
+      document.getElementById('resultContainer').innerHTML = resultHTML;
+    }
+  </script>
+
+</body>
+</html>
