@@ -1,86 +1,285 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <link rel="icon" href="assets/js-logo.jpg">
-  <title>Jahid Software</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>জাহিদ সফটওয়্যার</title>
+    <link rel="icon" href="assets/js-logo.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .bd-navbar {
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15), inset 0 -1px 0 rgba(255, 255, 255, 0.15);
+        }
+        
+        .card {
+            border: 8px solid;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 20px;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        :root {
+            --card-box-shadow-light: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+            --card-box-shadow-dark: rgba(255, 255, 255, 0.767) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        }
+        .card {
+            border: 2px solid;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 20px;
+            box-shadow: var(--card-box-shadow-light);
+        }
+
+        [data-bs-theme="dark"] .card {
+            box-shadow: var(--card-box-shadow-dark);
+        }
+
+        [data-bs-theme="light"] .card {
+            box-shadow: var(--card-box-shadow-light);
+        }
+        .card-1 { border-image: linear-gradient(120deg, #09d729, #0087ff) 1; }
+        .card-2 { border-image: linear-gradient(190deg, #4e00ff, #ff00cb) 1; }
+        .card-3 { border-image: linear-gradient(320deg, #0be12c, #ff1bfb) 1; }
+        .card-4 { border-image: linear-gradient(120deg, #2000ff, #69ff15) 1; }
+        .card-5 { border-image: linear-gradient(145deg, #ffb300, #05FFD0) 1; }
+        .card-6 { border-image: linear-gradient(195deg, #00ffdb, #b0f) 1; }
+        .navbar-toggler,.btn-close, .btn {border-radius: 0;}
+        .bg-nav{background: linear-gradient(to right, #ec008c, #fc6767);}
+        footer.footer {position: fixed;bottom: 0;width: 100%; background: linear-gradient(to right, #8e2de2, #4a00e0);}
+        .footer-content { display: flex; justify-content: space-between; align-items: center; }
+        .footer-content .theme-toggle { margin-left: auto; }
+        @media screen and (max-width: 767px) {
+            .offcanvas-body .nav-link {
+                color: #fff !important; 
+                background-image: linear-gradient(to top, #007adf 0%, #00ecbc 100%);
+                margin: 5px 0;
+                padding: 15px;
+                transition: background-color 0.3s ease, color 0.3s ease;
+                font-size: 18px;
+                font-weight: 900;
+            }
+            .offcanvas-body .nav-link:hover {
+                background-image: linear-gradient(to top, #A445B2 0%, #D41872 52%, #FF0066 100%);
+                color: #fff;
+            }
+            .offcanvas.offcanvas-top{height: auto;}
+            footer.footer {position: static;}
+        }
+
+        [data-bs-theme="light"] body {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        [data-bs-theme="dark"] body {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        [data-bs-theme="dark"] .navbar-light {
+            background-color: #333;
+        }
+
+        [data-bs-theme="dark"] .card {
+            background-color: #222;
+            border-color: #444;
+            color: #fff;
+        }
+        .card-body1{padding: 0px;}
+        @media (max-width: 767.98px) {
+            .card {
+                text-align: center; 
+            }
+            .card .img-fluid {
+                max-width: 100px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div id="particles-js"></div>
 
-    <nav class="navbar bg-primary fixed-top" data-bs-theme="dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <span style="font-family:Hind Siliguri;font-size: 22px;font-weight: bold;">জাহিদ সফটওয়্যার →</span> 
-          </a>
-        </div>
-      </nav>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-nav bd-navbar sticky-top" data-bs-theme="dark">
+        <div class="container-fluid d-flex justify-content-center align-items-center">
+            <a class="navbar-brand fw-bold" href="#" style="font-size:1.75rem; line-height: 1;">জাহিদ সফটওয়্যার</a>
 
-    <div class="container text-center d-flex justify-content-center align-items-center">
-        <div class="row justify-content-center">
-          <div class="col-md-3 mt-5">
-            <a href="bdris-toolkit/" class="card education">
-                <div class="overlay"></div>
-             <div class="circle">
-                <img src="assets/bdris-logo.png" style="z-index: inherit;height: 50%;">
+            <button class="navbar-toggler d-lg-none position-absolute" style="left: 10px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-           
-             </div>
-             <p>বিডিআরআইএস <br>(BDRIS Toolkit)</p>
-           </a>           
-          </div>
-
-          <div class="col-md-3 mt-5">
-            <a href="http://jahidcse.great-site.net/ecnid-toolkit/" class="card credentialing">
-                <div class="overlay"></div>
-             <div class="circle">
-                <img src="assets/ec-logo.png" style="z-index: inherit;height: 50%;">
-             </div>
-             <p>ইসি এনআইডি টুলকিট <br>(MySQL Database)</p>
-           </a>           
-          </div>
-
-          <div class="col-md-3 mt-5">
-            <a href="download/age-calculator.zip" class="card wallet">
-                <div class="overlay"></div>
-            <div class="circle">
-            
-            
-            <svg width="78px" height="60px" viewBox="23 29 78 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-
-            <g id="icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(23.000000, 29.500000)">
-                <rect id="Rectangle-3" fill="#AC8BE9" x="67.8357511" y="26.0333433" width="9.40495664" height="21.8788565" rx="4.70247832"></rect>
-                <rect id="Rectangle-3" fill="#6A5297" x="67.8357511" y="38.776399" width="9.40495664" height="10.962961" rx="4.70247832"></rect>
-                <polygon id="Rectangle-2" fill="#6A5297" points="57.3086772 0 67.1649301 26.3776902 14.4413177 45.0699507 4.58506484 18.6922605"></polygon>
-                <path d="M0,19.6104296 C0,16.2921718 2.68622235,13.6021923 5.99495032,13.6021923 L67.6438591,13.6021923 C70.9547788,13.6021923 73.6388095,16.2865506 73.6388095,19.6104296 L73.6388095,52.6639057 C73.6388095,55.9821635 70.9525871,58.672143 67.6438591,58.672143 L5.99495032,58.672143 C2.68403068,58.672143 0,55.9877847 0,52.6639057 L0,19.6104296 Z" id="Rectangle" fill="#8B6FC0"></path>
-                <path d="M47.5173769,27.0835169 C45.0052827,24.5377699 40.9347162,24.5377699 38.422622,27.0835169 L36.9065677,28.6198808 L35.3905134,27.0835169 C32.8799903,24.5377699 28.8078527,24.5377699 26.2957585,27.0835169 C23.7852354,29.6292639 23.7852354,33.7559532 26.2957585,36.3001081 L36.9065677,47.0530632 L47.5173769,36.3001081 C50.029471,33.7559532 50.029471,29.6292639 47.5173769,27.0835169" id="Fill-12" fill="#F6F1FF"></path>
-                <rect id="Rectangle-4" fill="#AC8BE9" x="58.0305835" y="26.1162588" width="15.6082259" height="12.863158"></rect>
-                <ellipse id="Oval" fill="#FFFFFF" cx="65.8346965" cy="33.0919007" rx="2.20116007" ry="2.23319575"></ellipse>
-            </g>
-            </svg>
-
+            <div class="collapse navbar-collapse d-lg-flex justify-content-center" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                </ul>
             </div>
-            <p>বয়স ক্যালকুলেটর<br>(OS-Windows)</p>
-            </a>
-          </div>
-
-          <div class="col-md-3 mt-5">
-            <a href="http://sonod.great-site.net/" class="card human-resources">
-                <div class="overlay"></div>
-             <div class="circle">
-              <img src="assets/osms-logo.png" style="z-index: inherit;height: 70%;">
-             </div>
-             <p>অনলাইন সনদ ম্যানেজমেন্ট সিস্টেম<br>(Web Application)</p>
-           </a>
-          </div>
-
         </div>
-      </div>
+        <div class="offcanvas offcanvas-top d-lg-none" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">জাহিদ সফটওয়্যার</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                </ul>
+            </div>
+                <div class="offcanvas-footer">
+                    <div class="d-md-none text-center">
+                        <h5 style="background-color: #d50064;color: #fff; padding: 3px;"> &copy; কপিরাইট ২০২৪. সর্বস্বত্ব সংরক্ষিত</h5>
+                    </div>
+                </div>
+        </div>
+    </nav>
 
-      <script src="assets/particles.js"></script>
-      <script  src="assets/script.js"></script>
+    <!-- Card Section -->
+    <div class="container my-4">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <div class="col">
+                <div class="card card-1">
+                     <div class="row">
+                        <div class="col-md-4">
+                          <img src="assets/osms-logo.png" class="img-fluid">
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body1 m-0 p-0">
+                            <h5 class="card-title text-center">অনলাইন সনদ ম্যানেজমেন্ট সিস্টেম</h5>   
+                                <div class="btn-group btn-group-sm">
+                                    <a href="http://sonod.great-site.net/" class="btn btn-primary"><i class="fa-solid fa-eye"></i> ওয়েব অ্যাপ</a>
+                                    <a href="download/osms.apk" class="btn btn-danger"><i class="fa-solid fa-download"></i> এন্ড্রয়েড অ্যাপস</a>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-2">
+                    <div class="row">
+                        <div class="col-md-4">
+                          <img src="age-calculator/assets/favicon.jpg" class="img-fluid">
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body1 mb-0 p-0">
+                            <h5 class="card-title text-center">বয়স ক্যালকুলেটর <br><small>Age Calculator</small> </h5> 
+                                <div class="btn-group btn-group-sm">
+                                    <a href="age-calculator/" class="btn btn-primary"><i class="fa-solid fa-eye"></i> ওয়েব অ্যাপ</a>
+                                    <a href="download/age-calculator.zip" class="btn btn-info text-white"><i class="fa-solid fa-download"></i> উইন্ডোজ অ্যাপ</a>
+                                    <a href="age-calculator/age-calculator.apk" class="btn btn-danger"><i class="fa-solid fa-download"></i> এন্ড্রয়েড অ্যাপস</a>
+                                    
+                                 </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-3">
+                    <div class="row">
+                        <div class="col-md-4">
+                          <img src="assets/bdris-logo.png" class="img-fluid">
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body1 m-0 p-0">
+                            <h5 class="card-title text-center">বিডিআরআইএস <br>BDRIS Toolkit<br>
+                                <a href="#" class="btn btn-primary mt-1"><i class="fa-solid fa-eye"></i> ওয়েব অ্যাপ</a>
+                            </h5>  
+                           </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-4">
+                    <div class="row">
+                        <div class="col-md-4">
+                          <img src="assets/ec-logo.png" class="img-fluid">
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body1 m-0 p-0">
+                            <h5 class="card-title text-center">ইসি এনআইডি টুলকিট</h5>   
+                            <div class="btn-group btn-group-sm">
+                                <a href="http://jahidcse.great-site.net/ecnid-toolkit/" class="btn btn-primary"><i class="fa-solid fa-eye"></i> ওয়েব অ্যাপ</a>
+                                <a href="#" class="btn btn-danger"><i class="fa-solid fa-download"></i> এন্ড্রয়েড অ্যাপস</a>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+
+    <footer class="footer mt-auto py-1">
+        <div class="container">
+            <div class="footer-content d-flex justify-content-between align-items-center">
+                <span class="text-white">&copy; কপিরাইট ২০২৪. সর্বস্বত্ব সংরক্ষিত</span>
+                <div class="theme-toggle">
+                    <div class="dropdown">
+                        <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" type="button" data-bs-toggle="dropdown" >
+                            <i class="fas fa-sun theme-icon-active text-white"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end shadow">
+                            <li><button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="light"><i class="fas fa-sun me-2"></i> Light</button></li>
+                            <li><button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"><i class="fas fa-moon me-2"></i> Dark</button></li>
+                            <li><button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto"><i class="fas fa-adjust me-2"></i> Auto</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const setTheme = (theme) => {
+            document.documentElement.setAttribute('data-bs-theme', theme);
+            localStorage.setItem('theme', theme);
+    
+            document.querySelectorAll('.dropdown-item').forEach((item) => {
+                item.classList.remove('active');
+            });
+            document.querySelector(`[data-bs-theme-value="${theme}"]`).classList.add('active');
+    
+            const themeIcon = document.querySelector('.theme-icon-active');
+            if (theme === 'dark') {
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            } else {
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            }
+        };
+    
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        setTheme(savedTheme);
+    
+        document.querySelectorAll('.dropdown-item').forEach((item) => {
+            item.addEventListener('click', (event) => {
+                setTheme(event.currentTarget.getAttribute('data-bs-theme-value'));
+            });
+        });
+    </script>
 </body>
 </html>
