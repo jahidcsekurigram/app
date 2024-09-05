@@ -22,10 +22,15 @@
             border: 8px solid;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
         }
-
         .card:hover {
             transform: translateY(-10px);
+            background-image: linear-gradient(110deg, #92fe9d 0%, #00c9ff 100%);
+            color:#fff;
         }
         :root {
             --card-box-shadow-light: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
@@ -37,6 +42,12 @@
             padding: 20px;
             box-shadow: var(--card-box-shadow-light);
         }
+        .card-1 { border-image: linear-gradient(120deg, #09d729, #0087ff) 1; }
+        .card-2 { border-image: linear-gradient(190deg, #4e00ff, #ff00cb) 1; }
+        .card-3 { border-image: linear-gradient(320deg, #0be12c, #ff1bfb) 1; }
+        .card-4 { border-image: linear-gradient(120deg, #2000ff, #69ff15) 1; }
+        .card-5 { border-image: linear-gradient(145deg, #ffb300, #05FFD0) 1; }
+        .card-6 { border-image: linear-gradient(195deg, #00ffdb, #b0f) 1; }
 
         [data-bs-theme="dark"] .card {
             box-shadow: var(--card-box-shadow-dark);
@@ -45,12 +56,25 @@
         [data-bs-theme="light"] .card {
             box-shadow: var(--card-box-shadow-light);
         }
-        .card-1 { border-image: linear-gradient(120deg, #09d729, #0087ff) 1; }
-        .card-2 { border-image: linear-gradient(190deg, #4e00ff, #ff00cb) 1; }
-        .card-3 { border-image: linear-gradient(320deg, #0be12c, #ff1bfb) 1; }
-        .card-4 { border-image: linear-gradient(120deg, #2000ff, #69ff15) 1; }
-        .card-5 { border-image: linear-gradient(145deg, #ffb300, #05FFD0) 1; }
-        .card-6 { border-image: linear-gradient(195deg, #00ffdb, #b0f) 1; }
+        
+        [data-bs-theme="light"] body {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        [data-bs-theme="dark"] body {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        [data-bs-theme="dark"] .navbar-light {
+            background-color: #333;
+        }
+
+        [data-bs-theme="dark"] .card {
+            background-color: #222;
+            border-color: #444;
+            color: #fff;
+        }
         .navbar-toggler,.btn-close, .btn {border-radius: 0;}
         .bg-nav{background: linear-gradient(to right, #ec008c, #fc6767);}
         footer.footer {position: fixed;bottom: 0;width: 100%; background: linear-gradient(to right, #8e2de2, #4a00e0);}
@@ -73,25 +97,6 @@
             .offcanvas.offcanvas-top{height: auto;}
             footer.footer {position: static;}
         }
-
-        [data-bs-theme="light"] body {
-            background-color: #ffffff;
-            color: #000000;
-        }
-        [data-bs-theme="dark"] body {
-            background-color: #121212;
-            color: #ffffff;
-        }
-
-        [data-bs-theme="dark"] .navbar-light {
-            background-color: #333;
-        }
-
-        [data-bs-theme="dark"] .card {
-            background-color: #222;
-            border-color: #444;
-            color: #fff;
-        }
         .card-body1{padding: 0px;}
         @media (max-width: 767.98px) {
             .card {
@@ -100,6 +105,10 @@
             .card .img-fluid {
                 max-width: 100px;
             }
+
+        }
+        .carousel-item {
+        height: 300px;
         }
     </style>
 </head>
@@ -120,10 +129,10 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
+                        <a class="nav-link" href="#">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
+                        <a class="nav-link" href="#">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -139,10 +148,10 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
+                        <a class="nav-link" href="#">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
+                        <a class="nav-link" href="#">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -153,6 +162,42 @@
                 </div>
         </div>
     </nav>
+
+
+
+
+
+
+
+    <div id="myCarousel" class="carousel slide mb-6 mt-0" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+           <img src="assets/header-image.jpg" class="bd-placeholder-img" width="100%" height="100%" aria-hidden="true">
+            <div class="container">
+              <div class="carousel-caption text-start">
+                <h1> GET YOUR SOFTWARE DONE...</h1>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+
 
     <!-- Card Section -->
     <div class="container my-4">
@@ -219,7 +264,7 @@
                         </div>
                         <div class="col-md-8">
                           <div class="card-body1 m-0 p-0">
-                            <h5 class="card-title text-center">ইসি এনআইডি টুলকিট</h5>   
+                            <h5 class="card-title text-center">ইসি এনআইডি টুলকিট<br>EC NID Toolkit</h5>   
                             <div class="btn-group btn-group-sm">
                                 <a href="http://jahidcse.great-site.net/ecnid-toolkit/" class="btn btn-primary"><i class="fa-solid fa-eye"></i> ওয়েব অ্যাপ</a>
                                 <a href="#" class="btn btn-danger"><i class="fa-solid fa-download"></i> এন্ড্রয়েড অ্যাপস</a>
