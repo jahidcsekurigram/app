@@ -8,12 +8,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
     <style>
+        body, *{font-family: 'SolaimanLipi', 'Hind Siliguri' Arial, sans-serif !important;}
         body {
             background-color: #ffffff;
             color: #000000;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
+        .bn-f1{font-family:Hind Siliguri;}
         .bd-navbar {
             box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15), inset 0 -1px 0 rgba(255, 255, 255, 0.15);
         }
@@ -98,6 +101,7 @@
             footer.footer {position: static;}
         }
         .card-body1{padding: 0px;}
+        
         @media (max-width: 767.98px) {
             .card {
                 text-align: center; 
@@ -110,9 +114,102 @@
         .carousel-item {
         height: 300px;
         }
+        body::-webkit-scrollbar {
+            width: 12px; 
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background: linear-gradient(145deg, #ff00cb, #0087ff); 
+            border: 2px solid #fff; 
+        }
+
+        body::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        body::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(145deg, #ff0099, #0055ff);
+        }
+        .topbar {
+            background-color: #333;
+            color: #fff;
+            padding: 3px 0;
+        }
+        .topbar .breaking-news {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+        }
+        .breaking-news .breaking-title {
+            background-color: #ff0000;
+            color: #fff;
+            padding: 3px 10px;
+            white-space: nowrap;
+        }
+        .breaking-news .news-scroll {
+            flex-grow: 1;
+            overflow: hidden;
+        }
+        .news-scroll marquee {
+            color: #fff;
+        }
+        .topbar .social-icons {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .topbar .social-icons li {
+            display: inline-block;
+            margin-left: 10px;
+        }
+        .topbar .social-icons li a {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            line-height: 25px;
+            border-radius: 50%;
+            background-color: #fff;
+            color: #333;
+            text-align: center;
+            font-size: 15px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .topbar .social-icons li a:hover {
+            background-color: #007adf;
+            color: #fff;
+        }
+
+        @media (max-width: 767.98px) {
+            .topbar .social-icons li {
+                margin-right: 2px;
+            }
+        }
     </style>
 </head>
 <body>
+
+    <!-- Topbar -->
+    <div class="topbar">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <div class="breaking-news ">
+                <strong class="breaking-title">নোটিশ:</strong>
+                <div class="news-scroll">
+                    <marquee behavior="scroll" direction="left" scrollamount="6">
+                        নতুন সফটওয়্যার রিলিজ করা হয়েছে। বিস্তারিত জানার জন্য ক্লিক করুন!
+                    </marquee>
+                </div>
+            </div>
+
+            <ul class="social-icons d-flex align-items-center mb-0">
+                <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a></li>
+            </ul>
+        </div>
+    </div>
+
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-nav bd-navbar sticky-top" data-bs-theme="dark">
@@ -148,8 +245,7 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Services</a>
-                    </li>
+                        <a class="nav-link" href="#">Services</a></li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact</a>
                     </li>
@@ -163,28 +259,47 @@
         </div>
     </nav>
 
-
-
-
-
-
-
-    <div id="myCarousel" class="carousel slide mb-6 mt-0" data-bs-ride="carousel">
+<div class="my-0">
+    <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-           <img src="assets/header-image.jpg" class="bd-placeholder-img" width="100%" height="100%" aria-hidden="true">
+           <img src="assets/slider-1.jpg" class="img-fluid" height="50%">
             <div class="container">
               <div class="carousel-caption text-start">
                 <h1> GET YOUR SOFTWARE DONE...</h1>
               </div>
             </div>
           </div>
-
+          <div class="carousel-item">
+            <img src="assets/slider-2.jpg" class="img-fluid" width="100%" height="100%" aria-hidden="true">
+             <div class="container">
+               <div class="carousel-caption text-start">
+                 <h1></h1>
+               </div>
+             </div>
+           </div>
+           <div class="carousel-item">
+            <img src="assets/slider-3.jpg" class="img-fluid" width="100%" height="100%" aria-hidden="true">
+             <div class="container">
+               <div class="carousel-caption text-start">
+                 <h1> </h1>
+               </div>
+             </div>
+           </div>
+           <div class="carousel-item">
+            <img src="assets/slider-4.jpg" class="img-fluid" width="100%" height="100%" aria-hidden="true">
+             <div class="container">
+               <div class="carousel-caption text-start">
+                 <h1> GET YOUR SOFTWARE DONE...</h1>
+               </div>
+             </div>
+           </div>
 
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
@@ -197,7 +312,7 @@
         </button>
       </div>
 
-
+</div>
 
     <!-- Card Section -->
     <div class="container my-4">
@@ -267,7 +382,7 @@
                             <h5 class="card-title text-center">ইসি এনআইডি টুলকিট<br>EC NID Toolkit</h5>   
                             <div class="btn-group btn-group-sm">
                                 <a href="http://jahidcse.great-site.net/ecnid-toolkit/" class="btn btn-primary"><i class="fa-solid fa-eye"></i> ওয়েব অ্যাপ</a>
-                                <a href="#" class="btn btn-danger"><i class="fa-solid fa-download"></i> এন্ড্রয়েড অ্যাপস</a>
+                                <button class="btn btn-danger" onclick="downloadApp()"><i class="fa-solid fa-download"></i> এন্ড্রয়েড অ্যাপস</button>
                               </div>
                             </div>
                         </div>
@@ -285,7 +400,7 @@
                             <h5 class="card-title text-center">RSTU Student Management System</h5>   
                             <div class="btn-group btn-group-sm">
                                 <a href="http://jahidcse.great-site.net/rstu/" class="btn btn-primary"><i class="fa-solid fa-eye"></i> ওয়েব অ্যাপ</a>
-                                <a href="#" class="btn btn-danger"><i class="fa-solid fa-download"></i> এন্ড্রয়েড অ্যাপস</a>
+                                <a href="download/jahidcse.apk" class="btn btn-danger"><i class="fa-solid fa-download"></i> এন্ড্রয়েড অ্যাপস</a>
                               </div>
                             </div>
                         </div>
@@ -295,6 +410,7 @@
     
         </div>
     </div>
+
 
     <footer class="footer mt-auto py-1">
         <div class="container">
@@ -315,7 +431,17 @@
             </div>
         </div>
     </footer>
-
+    <script>
+        function downloadApp() {
+            const encodedCode = "MzA5MjIz"; 
+            const code = prompt("নিরাপত্তার স্বার্থে সিকিউরিটি কোড ব্যবহার করা হয়েছে.....");
+            if (btoa(code) === encodedCode) {
+                window.location.href = 'download/ecnid-toolkit.apk';
+            } else {
+                alert("সিকিউরিটি কোড সঠিক নয় ? আবার চেষ্টা করুণ.....");
+            }
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         const setTheme = (theme) => {
@@ -344,5 +470,6 @@
             });
         });
     </script>
+    
 </body>
 </html>
