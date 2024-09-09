@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
     <style>
-        body, *{font-family: 'SolaimanLipi', 'Hind Siliguri' Arial, sans-serif !important;}
+        body{font-family: 'SolaimanLipi', 'Hind Siliguri', Arial, sans-serif !important;}
         body {
             background-color: #ffffff;
             color: #000000;
@@ -20,7 +20,6 @@
         .bd-navbar {
             box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15), inset 0 -1px 0 rgba(255, 255, 255, 0.15);
         }
-        
         .card {
             border: 8px solid;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -131,7 +130,7 @@
             background: linear-gradient(145deg, #ff0099, #0055ff);
         }
         .topbar {
-            background-color: #333;
+            background: linear-gradient(100deg, #51079b, #0cfb75);
             color: #fff;
             padding: 3px 0;
         }
@@ -175,7 +174,7 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
         .topbar .social-icons li a:hover {
-            background-color: #007adf;
+            background-color: red;
             color: #fff;
         }
 
@@ -188,6 +187,7 @@
 </head>
 <body>
 
+<div class="sticky-top">
     <!-- Topbar -->
     <div class="topbar">
         <div class="container-fluid d-flex justify-content-between align-items-center">
@@ -201,10 +201,10 @@
             </div>
 
             <ul class="social-icons d-flex align-items-center mb-0">
-                <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="http://www.facebook.com/jahid.cse.kgm" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://twitter.com/JahidCSE2" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="https://www.instagram.com/jahidcsekgm/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://linkedin.com/in/jahidcse96" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
                 <li><a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a></li>
             </ul>
         </div>
@@ -212,9 +212,9 @@
 
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-nav bd-navbar sticky-top" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg navbar-light bg-nav bd-navbar" data-bs-theme="dark">
         <div class="container-fluid d-flex justify-content-center align-items-center">
-            <a class="navbar-brand fw-bold" href="#" style="font-size:1.75rem; line-height: 1;">জাহিদ সফটওয়্যার</a>
+            <a class="navbar-brand fw-bold bn-f1" href="#" style="font-size:1.75rem; line-height: 1;">জাহিদ সফটওয়্যার</a>
 
             <button class="navbar-toggler d-lg-none position-absolute" style="left: 10px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -258,6 +258,8 @@
                 </div>
         </div>
     </nav>
+
+</div>
 
 <div class="my-0">
     <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
