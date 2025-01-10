@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>জন্ম/মৃত্যু নিবন্ধন বই || পাঁচগাছী ইউপি</title>
+	<meta charset="UTF-8">
+	<link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">  
+	<meta name="author" content="Jahid CSE">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/animate.min.css">
+	<link rel="stylesheet" href="assets/style.css">
+
+    <link href="assets/font-awesome/css/fontawesome.css" rel="stylesheet">
+    <link href="assets/font-awesome/css/solid.css" rel="stylesheet">
+    
+    <script>
+        window.addEventListener('contextmenu', function (e) {
+            // do something here... 
+            e.preventDefault();
+        }, false);
+        
+        document.onselectstart = function pauseEvent(e) {
+            if (e.stopPropagation) e.stopPropagation();
+            if (e.preventDefault) e.preventDefault();
+            e.cancelBubble = true;
+            e.returnValue = false;
+            return false;
+        }
+    </script>
+    <script>
+        $('img').mousedown(function (e) {
+        if(e.button == 2) { // right click
+            return false; // do nothing!
+        }
+        });
+    </script>
+
+</head>
+
+<body onload="sessionStorage.clear();">
+	<div class="headertitle">
+        <img src="assets/bd_logo.png" height="90px" width="90px" class="animate__animated animate__backInLeft">
+        <img src="assets/uplogo.png" height="90px" width="90px" class="animate__animated animate__backInRight">
+        <h1 style="font-size: 12px;font-family: SutonnyMJ; padding-top: 5px;" class="animate__animated animate__fadeInDownBig">গণপ্রজাতন্ত্রী বাংলাদেশ সরকার</h1>
+        <h1 style="font-size: 25px;font-family: Shorif Shishir Unicode;" class="animate__animated animate__fadeInUpBig"> ৮ নং পাঁচগাছী ইউনিয়ন পরিষদ কার্যালয়</h1>
+        <h2 style="font-size: 15px;font-family: Shorif Shishir Unicode;" class="animate__animated animate__fadeInTopLeft">ডাকঘরঃ পাঁচগাছী, উপজেলাঃ কুড়িগ্রাম সদর, জেলাঃ কুড়িগ্রাম।</h2>
+        <h2 style="font-size: 14px;font-family: Bahnschrift;" class="animate__animated animate__fadeInTopRight">Web: panchgachiup.kurigram.gov.bd</h2>
+        <h3 class="text-center font-weight-bold animate__animated animate__flipInY" style="font-size: 23px;font-family: Shorif Shishir Unicode;">জন্ম/মৃত্যু নিবন্ধন বই</h3>
+	</div>
+
+    <div class="container">
+        <div class="row">
+          <div class="col-1">
+            <section class="card-section">
+                <div class="card animate__animated animate__backInRight">
+                    <div class="flip-card">
+                        <div class="flip-card__container">
+                            <div class="card-front">
+                                <div class="card-front__tp card-front__tp--city">
+                                    <i class="fa fa-rss fa-3x"></i>
+                               <h2 class="card-front__heading">১ নং ওয়ার্ড</h2>
+                                <p class="card-front__text-price" style="text-align: center;">উত্তর নওয়াবশ, আরাজী ভোগডাঙ্গা</p>
+                                </div>
+    
+                                <div class="card-front__bt">
+                                    <p class="card-front__text-view card-front__text-view--city">বই দেখুন</p>
+                                </div>
+                            </div>
+                            <div class="card-back"></div>
+                        </div>
+                    </div>
+    
+                    <div class="inside-page">
+                        <div class="inside-page__container">
+
+                            <a href="#book1" class="inside-page__btn inside-page__btn--city">নিবন্ধন বহি</a>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+          </div><!-- ./ col-1 end -->
+          <div class="col-1">
+            <section class="card-section">
+                <div class="card animate__animated animate__backInLeft">
+                    <div class="flip-card">
+                        <div class="flip-card__container">
+                            <div class="card-front">
+                                <div class="card-front__tp card-front__tp--ski">
+                                     <i class="fa fa-cubes fa-3x"></i>                                 
+                                               <h2 class="card-front__heading">
+													২ নং ওয়ার্ড
+                                               </h2>
+                                               <p class="card-front__text-price" style="text-align: center;">
+													দক্ষিন নওয়াবশ, উত্তর কদমতলা
+                                               </p>
+                                </div>
+
+                                <div class="card-front__bt">
+                                    <p class="card-front__text-view card-front__text-view--ski">
+											বই দেখুন
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="card-back">
+                               
+							   
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="inside-page">
+                        <div class="inside-page__container">
+                            
+                            <a href="#book2" class="inside-page__btn inside-page__btn--ski">নিবন্ধন বহি</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+          </div><!-- ./ col-1 end -->
+          <div class="col-1">
+            <section class="card-section">
+                <div class="card animate__animated animate__backInDown">
+                    <div class="flip-card">
+                        <div class="flip-card__container">
+                            <div class="card-front">
+                                <div class="card-front__tp card-front__tp--beach">
+                                    <i class="fa fa-line-chart fa-3x"></i>
+                                               <h2 class="card-front__heading">
+													৩ নং ওয়ার্ড
+                                               </h2>
+                                               <p class="card-front__text-price">
+												দক্ষিন কদমতলা
+                                               </p>
+                                </div>
+
+                                <div class="card-front__bt">
+                                    <p class="card-front__text-view card-front__text-view--beach">
+												বই দেখুন
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                               
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="inside-page">
+                        <div class="inside-page__container">
+                            <a href="#book3" class="inside-page__btn inside-page__btn--beach">নিবন্ধন বহি</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+          </div><!-- ./ col-1 end -->
+          <div class="col-1">
+            <section class="card-section">
+                <div class="card animate__animated animate__backInUp">
+                    <div class="flip-card">
+                        <div class="flip-card__container">
+                            <div class="card-front">
+                                <div class="card-front__tp card-front__tp--camping">
+                                    <i class="fa fa-tags fa-3x"></i>
+                                               <h2 class="card-front__heading">
+													৪ নং ওয়ার্ড
+                                               </h2>
+                                               <p class="card-front__text-price">
+													সিতাইঝাড়
+                                               </p>
+                                </div>
+
+                                <div class="card-front__bt">
+                                    <p class="card-front__text-view card-front__text-view--camping">
+												বই দেখুন
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                               
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="inside-page">
+                        <div class="inside-page__container">                    
+                            <a href="#book4" class="inside-page__btn inside-page__btn--camping">নিবন্ধন বহি</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+          </div><!-- ./ col-1 end -->
+          <div class="col-1">
+            <section class="card-section">
+                <div class="card animate__animated animate__fadeInRight">
+                    <div class="flip-card">
+                        <div class="flip-card__container">
+                            <div class="card-front">
+                                <div class="card-front__tp card-front__tp--jahidcse1">
+                                    <i class="fa fa-rocket fa-3x"></i>
+                               <h2 class="card-front__heading">
+									৫ নং ওয়ার্ড
+                            </h2>
+                            <p class="card-front__text-price">
+									গারুহাড়া, আরাজী কদমতলা
+                            </p>
+                                </div>
+
+                                <div class="card-front__bt">
+                                    <p class="card-front__text-view card-front__text-view--jahidcse1">
+										বই দেখুন
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                       
+					   
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="inside-page">
+                        <div class="inside-page__container">
+                          
+                            <a href="#book5" class="inside-page__btn inside-page__btn--jahidcse1">নিবন্ধন বহি</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+          </div><!-- ./ col-1 end -->
+          <div class="col-1">
+            <section class="card-section">
+                <div class="card animate__animated animate__fadeInBottomLeft">
+                    <div class="flip-card">
+                        <div class="flip-card__container">
+                            <div class="card-front">
+                                <div class="card-front__tp card-front__tp--jahidcse2">
+                                    <i class="fa fa-book fa-3x"></i>
+                                
+                               <h2 class="card-front__heading">
+									৬ নং ওয়ার্ড
+                            </h2>
+                            <p class="card-front__text-price">
+									গোবিন্দপুর
+                            </p>
+                                </div>
+
+                                <div class="card-front__bt">
+                                    <p class="card-front__text-view card-front__text-view--jahidcse2">
+										বই দেখুন
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                       
+					   
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="inside-page">
+                        <div class="inside-page__container">
+                          
+                            <a href="#book6" class="inside-page__btn inside-page__btn--jahidcse2">নিবন্ধন বহি</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+          </div><!-- ./ col-1 end -->
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-1">
+            <section class="card-section">
+                <div class="card animate__animated animate__fadeInBottomLeft">
+                    <div class="flip-card">
+                        <div class="flip-card__container">
+                            <div class="card-front">
+                                <div class="card-front__tp card-front__tp--jahidcse3">
+                                    <i class="fa fa-sliders fa-3x"></i>
+
+                               <h2 class="card-front__heading">
+									৭ নং ওয়ার্ড
+                            </h2>
+                            <p class="card-front__text-price">
+									ছত্রপুর (মধ্য)
+                            </p>
+                                </div>
+
+                                <div class="card-front__bt">
+                                    <p class="card-front__text-view card-front__text-view--jahidcse3">
+										বই দেখুন
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                       
+					   
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="inside-page">
+                        <div class="inside-page__container">
+                          
+                            <a href="#book7" class="inside-page__btn inside-page__btn--jahidcse3">নিবন্ধন বহি</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+          </div><!-- ./ col-1 end -->
+          <div class="col-1">
+            <section class="card-section">
+                <div class="card animate__animated animate__lightSpeedInLeft">
+                    <div class="flip-card">
+                        <div class="flip-card__container">
+                            <div class="card-front">
+                                <div class="card-front__tp card-front__tp--jahidcse4">
+                                    <i class="fa fa-shopping-basket fa-3x"></i>
+
+                               <h2 class="card-front__heading">
+									৮ নং ওয়ার্ড
+                            </h2>
+                            <p class="card-front__text-price">
+									ছত্রপুর (পূর্ব)
+                            </p>
+                                </div>
+
+                                <div class="card-front__bt">
+                                    <p class="card-front__text-view card-front__text-view--jahidcse4">
+										বই দেখুন
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                       
+					   
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="inside-page">
+                        <div class="inside-page__container">
+                          
+                            <a href="#book8" class="inside-page__btn inside-page__btn--jahidcse4">নিবন্ধন বহি</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+          </div><!-- ./ col-1 end -->
+          <div class="col-1">
+            <section class="card-area">
+                <!-- Card: City -->
+                <section class="card-section">
+                    <div class="card animate__animated animate__jackInTheBox">
+                        <div class="flip-card">
+                            <div class="flip-card__container">
+                                <div class="card-front">
+                                    <div class="card-front__tp card-front__tp--jahidcse5">
+                                        <i class="fa fa-street-view fa-3x"></i>
+
+                                   <h2 class="card-front__heading">
+                                        ৯ নং ওয়ার্ড
+                                </h2>
+                                <p class="card-front__text-price">
+                                        ছত্রপুর (উত্তর)
+                                </p>
+                                    </div>
+    
+                                    <div class="card-front__bt">
+                                        <p class="card-front__text-view card-front__text-view--jahidcse5">
+                                            বই দেখুন
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="card-back">
+                           
+                           
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="inside-page">
+                            <div class="inside-page__container">
+                              
+                                <a href="#book9" class="inside-page__btn inside-page__btn--jahidcse5">নিবন্ধন বহি</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+          </div><!-- ./ col-1 end -->
+          <div class="col-1">
+            <section class="card-section">
+                <div class="card animate__animated animate__jackInTheBox">
+                    <div class="flip-card">
+                        <div class="flip-card__container">
+                            <div class="card-front">
+                                <div class="card-front__tp card-front__tp--jahidcse7">
+                                    <i class="fa fa-tasks fa-3x"></i>
+
+                                               <h2 class="card-front__heading">
+													বই নং- ১০
+                                               </h2>
+                                               <p class="card-front__text-price" style="text-align: center;">
+													ম্যানুয়াল
+                                               </p>
+                                </div>
+
+                                <div class="card-front__bt">
+                                    <p class="card-front__text-view card-front__text-view--jahidcse7">
+											বই দেখুন
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="card-back">
+                               
+							   
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="inside-page">
+                        <div class="inside-page__container">
+                            
+                            <a href="#book10" class="inside-page__btn inside-page__btn--jahidcse7">নিবন্ধন বহি</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+          </div><!-- ./ col-1 end -->
+          <div class="col-1">
+            <section class="card-section">
+                <div class="card animate__animated animate__rollIn">
+                    <div class="flip-card">
+                        <div class="flip-card__container">
+                            <div class="card-front">
+                                <div class="card-front__tp card-front__tp--jahidcse8">
+                                    <i class="fa fa-signal fa-3x"></i>
+                
+                                               <h2 class="card-front__heading">
+													বই নং- ১১
+                                               </h2>
+                                               <p class="card-front__text-price">
+												অনলাইন
+                                               </p>
+                                </div>
+
+                                <div class="card-front__bt">
+                                    <p class="card-front__text-view card-front__text-view--jahidcse8">
+												বই দেখুন
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                               
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="inside-page">
+                        <div class="inside-page__container">
+                            <a href="#book11" class="inside-page__btn inside-page__btn--jahidcse8">নিবন্ধন বহি</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+          </div><!-- ./ col-1 end -->
+          <div class="col-1">
+            <section class="card-section">
+                <div class="card animate__animated animate__slideInDown">
+                    <div class="flip-card">
+                        <div class="flip-card__container">
+                            <div class="card-front">
+                                <div class="card-front__tp card-front__tp--jahidcse9">
+                                    <i class="fa fa-link fa-3x"></i>
+
+                                               <h2 class="card-front__heading">
+													বই নং- ১২
+                                               </h2>
+                                               <p class="card-front__text-price">
+													অনলাইন
+                                               </p>
+                                </div>
+
+                                <div class="card-front__bt">
+                                    <p class="card-front__text-view card-front__text-view--jahidcse9">
+												বই দেখুন
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                               
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="inside-page">
+                        <div class="inside-page__container">                    
+                            <a href="#book12" class="inside-page__btn inside-page__btn--jahidcse9">নিবন্ধন বহি</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+          </div><!-- ./ col-1 end -->
+        </div>
+        <div class="row">
+          <div class="col-1">
+            <section class="card-section">
+                <div class="card animate__animated animate__rotateIn">
+                    <div class="flip-card">
+                        <div class="flip-card__container">
+                            <div class="card-front">
+                                <div class="card-front__tp card-front__tp--jahidcse10">
+                                    <i class="fa fa-outdent fa-3x"></i>
+
+                               <h2 class="card-front__heading">
+									বই নং- ১৩
+                            </h2>
+                            <p class="card-front__text-price">
+									অনলাইন
+                            </p>
+                                </div>
+
+                                <div class="card-front__bt">
+                                    <p class="card-front__text-view card-front__text-view--jahidcse10">
+										বই দেখুন
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                       
+					   
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="inside-page">
+                        <div class="inside-page__container">
+                          
+                            <a href="#book13" class="inside-page__btn inside-page__btn--jahidcse10">নিবন্ধন বহি</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+          </div><!-- ./ col-1 end -->
+          <div class="col-1">
+            <section class="card-section">
+                <div class="card animate__animated animate__zoomInLeft">
+                    <div class="flip-card">
+                        <div class="flip-card__container">
+                            <div class="card-front">
+                                <div class="card-front__tp card-front__tp--jahidcse11">
+                                    <i class="fa fa-sign-language fa-3x"></i>
+
+                               <h2 class="card-front__heading">
+									বই নং- ১৪
+                            </h2>
+                            <p class="card-front__text-price">
+									অনলাইন
+                            </p>
+                                </div>
+
+                                <div class="card-front__bt">
+                                    <p class="card-front__text-view card-front__text-view--jahidcse11">
+										বই দেখুন
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                       
+					   
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="inside-page">
+                        <div class="inside-page__container">
+                          
+                            <a href="#book14" class="inside-page__btn inside-page__btn--jahidcse11">নিবন্ধন বহি</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+          </div><!-- ./ col-1 end -->
+          <div class="col-1">
+            <section class="card-section">
+                <div class="card animate__animated animate__backInRight">
+                    <div class="flip-card">
+                        <div class="flip-card__container">
+                            <div class="card-front">
+                                <div class="card-front__tp card-front__tp--jahidcse12">
+                                    <i class="fa fa-heartbeat fa-3x"></i>
+
+                               <h2 class="card-front__heading">
+									বই নং- ১৫
+                            </h2>
+                            <p class="card-front__text-price">
+									অনলাইন
+                            </p>
+                                </div>
+
+                                <div class="card-front__bt">
+                                    <p class="card-front__text-view card-front__text-view--jahidcse12">
+										বই দেখুন
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                       
+					   
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="inside-page">
+                        <div class="inside-page__container">
+                          
+                            <a href="#book15" class="inside-page__btn inside-page__btn--jahidcse12">নিবন্ধন বহি</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+          </div><!-- ./ col-1 end -->
+          <div class="col-1">
+            <section class="card-section">
+                <div class="card animate__animated animate__lightSpeedInLeft">
+                    <div class="flip-card">
+                        <div class="flip-card__container">
+                            <div class="card-front">
+                                <div class="card-front__tp card-front__tp--jahidcse13">
+                                    <i class="fa fa-lightbulb fa-3x"></i>
+
+                               <h2 class="card-front__heading">
+									বই নং- ১৬
+                            </h2>
+                            <p class="card-front__text-price">
+									অনলাইন
+                            </p>
+                                </div>
+
+                                <div class="card-front__bt">
+                                    <p class="card-front__text-view card-front__text-view--jahidcse13">
+										বই দেখুন
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                       
+					   
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="inside-page">
+                        <div class="inside-page__container">
+                          
+                            <a href="#book16" class="inside-page__btn inside-page__btn--jahidcse13">নিবন্ধন বহি</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+          </div><!-- ./ col-1 end -->
+          <div class="col-1">
+            <section class="card-section">
+                <div class="card animate__animated animate__fadeInBottomRight">
+                    <div class="flip-card">
+                        <div class="flip-card__container">
+                            <div class="card-front">
+                                <div class="card-front__tp card-front__tp--jahidcse14">
+                                    <i class="fa fa-folder-open fa-3x"></i>
+
+                               <h2 class="card-front__heading">বই নং- ১৭</h2>
+                                <p class="card-front__text-price" style="text-align: center;">অনলাইন</p>
+                                </div>
+    
+                                <div class="card-front__bt">
+                                    <p class="card-front__text-view card-front__text-view--jahidcse14">বই দেখুন</p>
+                                </div>
+                            </div>
+                            <div class="card-back"></div>
+                        </div>
+                    </div>
+    
+                    <div class="inside-page">
+                        <div class="inside-page__container">
+
+                            <a href="#book17" class="inside-page__btn inside-page__btn--jahidcse14">নিবন্ধন বহি</a>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+          </div><!-- ./ col-1 end -->
+          <div class="col-1">
+            <section class="card-area">
+                <!-- Card: City -->
+                <section class="card-section">
+                    <div class="card animate__animated animate__fadeInDown">
+                        <div class="flip-card">
+                            <div class="flip-card__container">
+                                <div class="card-front">
+                                    <div class="card-front__tp card-front__tp--jahidcse15">
+                                        <i class="fa fa-hdd fa-3x"></i>
+
+                                   <h2 class="card-front__heading">
+                                        বই নং- ১৮
+                                </h2>
+                                <p class="card-front__text-price">
+                                        অনলাইন
+                                </p>
+                                    </div>
+    
+                                    <div class="card-front__bt">
+                                        <p class="card-front__text-view card-front__text-view--jahidcse15">
+                                            বই দেখুন
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="card-back">
+                           
+                           
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="inside-page">
+                            <div class="inside-page__container">
+                              
+                                <a href="#book18" class="inside-page__btn inside-page__btn--jahidcse15">নিবন্ধন বহি</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+          </div><!-- ./ col-1 end -->
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-1">
+                <section class="card-section">
+                    <div class="card animate__animated animate__rotateInDownRight">
+                        <div class="flip-card">
+                            <div class="flip-card__container">
+                                <div class="card-front">
+                                    <div class="card-front__tp card-front__tp--jahidcse6">
+                                        <i class="fa fa-bed fa-3x"></i>
+
+                                                   <h2 class="card-front__heading">
+                                                    মৃত্যু নিবন্ধন বই নং- ১
+                                                   </h2>
+                                                   <p class="card-front__text-price" style="text-align: center;">
+                                                        অনলাইন
+                                                   </p>
+                                    </div>
+    
+                                    <div class="card-front__bt">
+                                        <p class="card-front__text-view card-front__text-view--jahidcse6">
+                                                বই দেখুন
+                                        </p>
+                                    </div>
+                                </div>
+    
+                                <div class="card-back">
+                                   
+                                   
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="inside-page">
+                            <div class="inside-page__container">
+                                
+                                <a href="#dbook1" class="inside-page__btn inside-page__btn--jahidcse6">নিবন্ধন বহি</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+          </div>
+      </div> 
+
+
+      <footer style="text-align: center; padding-top: 8px; padding-bottom: 5px; margin-top: 25px; background: -webkit-linear-gradient(120deg, hsl(285.62deg 100% 50.68% / 0%) 0%, hsl(338deg 100% 46.85%) 50%, hsl(182.77deg 92.53% 49.89% / 0%) 100%);">
+        <h1 style="font-family: Arial; padding-right: 30px; color: white;" class="animate__animated animate__zoomInUp" id='devjahid'> by <a href="https://jahidcsekurigram.blogspot.com/" style="color: yellow; text-decoration: none;">Jahid CSE</a></h1>
+      </footer>
+        <div id="book1" class="modaloverlay"><div class="modal"><a href="#close" class="close">&times;</a><iframe src="books/1_books.html"></iframe></div></div>
+        <div id="book2" class="modaloverlay"><div class="modal"><a href="#close" class="close">&times;</a><iframe src="books/2_books.html"></iframe></div></div>
+        <div id="book3" class="modaloverlay"><div class="modal"><a href="#close" class="close">&times;</a><iframe src="books/3_books.html"></iframe></div></div>
+        <div id="book4" class="modaloverlay"><div class="modal"><a href="#close" class="close">&times;</a><iframe src="books/4_books.html"></iframe></div></div>
+        <div id="book5" class="modaloverlay"><div class="modal"><a href="#close" class="close">&times;</a><iframe src="books/5_books.html"></iframe></div></div>
+        <div id="book6" class="modaloverlay"><div class="modal"><a href="#close" class="close">&times;</a><iframe src="books/6_books.html"></iframe></div></div>
+        <div id="book7" class="modaloverlay"><div class="modal"><a href="#close" class="close">&times;</a><iframe src="books/7_books.html"></iframe></div></div>
+        <div id="book8" class="modaloverlay"><div class="modal"><a href="#close" class="close">&times;</a><iframe src="books/8_books.html"></iframe></div></div>
+        <div id="book9" class="modaloverlay"><div class="modal"><a href="#close" class="close">&times;</a><iframe src="books/9_books.html"></iframe></div></div>
+        <div id="book10" class="modaloverlay"><div class="modal"><a href="#close" class="close">&times;</a><iframe src="books/10_books.html"></iframe></div></div>
+        <div id="book11" class="modaloverlay"><div class="modal"><a href="#close" class="close">&times;</a><iframe src="books/11_books.html"></iframe></div></div>
+        <div id="book12" class="modaloverlay"><div class="modal"><a href="#close" class="close">&times;</a><iframe src="books/12_books.html"></iframe></div></div>
+        <div id="book13" class="modaloverlay"><div class="modal"><a href="#close" class="close">&times;</a><iframe src="books/13_books.html"></iframe></div></div>
+        <div id="book14" class="modaloverlay"><div class="modal"><a href="#close" class="close">&times;</a><iframe src="books/14_books.html"></iframe></div></div>
+        <div id="book15" class="modaloverlay"><div class="modal"><a href="#close" class="close">&times;</a><iframe src="books/15_books.html"></iframe></div></div>
+        <div id="book16" class="modaloverlay"><div class="modal"><a href="#close" class="close">&times;</a><iframe src="books/16_books.html"></iframe></div></div>
+        <div id="book17" class="modaloverlay"><div class="modal"><a href="#close" class="close">&times;</a><iframe src="books/17_books.html"></iframe></div></div>
+        <div id="book18" class="modaloverlay"><div class="modal"><a href="#close" class="close">&times;</a><iframe src="books/18_books.html"></iframe></div></div>
+        <div id="dbook1" class="modaloverlay"><div class="modal"><a href="#close" class="close">&times;</a><iframe src="books/death_1books.html"></iframe></div></div>
+
+  <script src="assets/typist_script.js"></script>
+    <script> 
+    var cookies = document.cookie;
+        for (var i = 0; i < cookies.split(";").length; ++i)
+        {
+            var myCookie = cookies[i];
+            var pos = myCookie.indexOf("=");
+            var name = pos > -1 ? myCookie.substr(0, pos) : myCookie;
+            document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+        }
+    </script>
+</body>
+</html>
+
+
+
